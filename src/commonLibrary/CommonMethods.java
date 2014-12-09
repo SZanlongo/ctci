@@ -1,4 +1,4 @@
-package commonMethods;
+package commonLibrary;
 
 import java.util.Random;
 

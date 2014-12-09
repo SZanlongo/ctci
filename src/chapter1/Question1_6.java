@@ -1,6 +1,6 @@
 package chapter1;
 
-import commonMethods.CommonMethods;
+import commonLibrary.CommonMethods;
 
 //Rotate an NxN matrix 90 degrees
 public class Question1_6 {

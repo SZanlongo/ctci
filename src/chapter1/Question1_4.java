@@ -1,6 +1,6 @@
 package chapter1;
 
-import commonMethods.CommonMethods;
+import commonLibrary.CommonMethods;
 //Replace all spaces in string with %20
 public class Question1_4 {
 	/*

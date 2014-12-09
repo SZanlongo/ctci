@@ -1,6 +1,6 @@
 package chapter1;
 
-import commonMethods.CommonMethods;
+import commonLibrary.CommonMethods;
 
 //If an element in an MxN matrix is 0, set its row and column to 0
 public class Question1_7 {
