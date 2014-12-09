@@ -1,6 +1,6 @@
 package chapter1;
 
-import java.util.Random;
+import commonMethods.CommonMethods;
 
 //Rotate an NxN matrix 90 degrees
 public class Question1_6 {
@@ -10,13 +10,13 @@ public class Question1_6 {
 		int n = 4;// matrix size
 		int min = 0;// min random number
 		int max = 9;// max random number
-		int[][] matrix = randomMatrix(n, min, max);
+		int[][] matrix = CommonMethods.randomMatrix(n, min, max);
 		System.out.println("Original");
-		printMatrix(matrix, n);
+		CommonMethods.printMatrix(matrix, n);
 		System.out.println();
 		rotate(matrix, n);
 		System.out.println("Rotated");
-		printMatrix(matrix, n);
+		CommonMethods.printMatrix(matrix, n);
 	}
 
 	// Time: O(n^2), best since we are modifying a matrix with n^2 elements
@@ -43,31 +43,6 @@ public class Question1_6 {
 				// top is now on right
 				matrix[j][end] = top;
 			}
-		}
-	}
-
-	// generate an NxN matrix with random number between min/max
-	private static int[][] randomMatrix(int n, int min, int max) {
-		int[][] randomMatrix = new int[n][n]; // NxN matrix
-
-		Random rand = new Random();
-		// populate
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				randomMatrix[i][j] = Math.abs(rand.nextInt((max - min) + 1) + min);
-			}
-		}
-
-		return randomMatrix;
-	}
-
-	// print an NxN matrix, given N
-	public static void printMatrix(int[][] matrix, int n) {
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				System.out.print(matrix[i][j]);
-			}
-			System.out.println();
 		}
 	}
 }

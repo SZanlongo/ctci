@@ -1,6 +1,6 @@
 package chapter1;
 
-import java.util.Random;
+import commonMethods.CommonMethods;
 
 //If an element in an MxN matrix is 0, set its row and column to 0
 public class Question1_7 {
@@ -9,13 +9,13 @@ public class Question1_7 {
 		int n = 5;// matrix size
 		int min = 0;// min random number
 		int max = 9;// max random number
-		int[][] matrix = randomMatrix(n, min, max);
+		int[][] matrix = CommonMethods.randomMatrix(n, min, max);
 		System.out.println("Original");
-		printMatrix(matrix, n);
+		CommonMethods.printMatrix(matrix, n);
 		System.out.println();
 		setZeroes(matrix);
 		System.out.println("Zeroed");
-		printMatrix(matrix, n);
+		CommonMethods.printMatrix(matrix, n);
 	}
 
 	// Naive approach would be to create another MxN matrix
@@ -42,31 +42,6 @@ public class Question1_7 {
 					matrix[r][c] = 0;
 				}
 			}
-		}
-	}
-
-	// generate an NxN matrix with random number between min/max
-	private static int[][] randomMatrix(int n, int min, int max) {
-		int[][] randomMatrix = new int[n][n]; // NxN matrix
-
-		Random rand = new Random();
-		// populate
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				randomMatrix[i][j] = Math.abs(rand.nextInt((max - min) + 1) + min);
-			}
-		}
-
-		return randomMatrix;
-	}
-
-	// print an NxN matrix, given N
-	public static void printMatrix(int[][] matrix, int n) {
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				System.out.print(matrix[i][j]);
-			}
-			System.out.println();
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package chapter1;
 
+import commonMethods.CommonMethods;
 //Replace all spaces in string with %20
 public class Question1_4 {
 	/*
@@ -14,7 +15,8 @@ public class Question1_4 {
 			arr[i] = str.charAt(i);
 		}
 		replaceSpaces(arr, str.length());
-		System.out.println(new String(arr));
+		//System.out.println(new String(arr));
+		System.out.println(CommonMethods.charToString(arr));
 	}
 
 	/*
