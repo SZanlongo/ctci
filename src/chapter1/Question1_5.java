@@ -1,8 +1,8 @@
-package ctci;
+package chapter1;
 
 //Basic string compression
 //aabcccccaaa =  a2b1c5a3
-public class Question5 {
+public class Question1_5 {
 
 	public static void main(String[] args) {
 		String str = "aabcccccaaa";

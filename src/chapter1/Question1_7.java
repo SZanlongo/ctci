@@ -1,9 +1,9 @@
-package ctci;
+package chapter1;
 
 import java.util.Random;
 
 //If an element in an MxN matrix is 0, set its row and column to 0
-public class Question7 {
+public class Question1_7 {
 
 	public static void main(String[] args) {
 		int n = 5;// matrix size

@@ -1,7 +1,7 @@
-package ctci;
+package chapter1;
 
 //Determine if a string has all unique characters
-public class Question1 {
+public class Question1_1 {
 	// Check if ASCII (128, 256 chars) or Unicode
 
 	public static void main(String[] args) {

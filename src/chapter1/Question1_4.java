@@ -1,7 +1,7 @@
-package ctci;
+package chapter1;
 
 //Replace all spaces in string with %20
-public class Question4 {
+public class Question1_4 {
 	/*
 	 * Assume string has space at end for extra chars Given true length of
 	 * string Java - use char array to perform in-place operation

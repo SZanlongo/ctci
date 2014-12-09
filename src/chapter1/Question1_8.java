@@ -1,9 +1,9 @@
-package ctci;
+package chapter1;
 
 //Assume: given isSubstring
 //Find if s2 is a rotation of s1
 //using only one call to isSubstring
-public class Question8 {
+public class Question1_8 {
 
 	public static void main(String[] args) {
 		String[][] pairs = { { "hello", "world" }, { "waterbottle", "erbottlewat" }, { "came", "mace" },

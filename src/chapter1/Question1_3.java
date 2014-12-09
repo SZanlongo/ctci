@@ -1,7 +1,7 @@
-package ctci;
+package chapter1;
 
 //Determine if string is permutation of other
-public class Question3 {
+public class Question1_3 {
 	// Check if they have same chars, but different order
 	// Assume ASCII 256 chars
 

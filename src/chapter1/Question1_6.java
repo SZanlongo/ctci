@@ -1,9 +1,9 @@
-package ctci;
+package chapter1;
 
 import java.util.Random;
 
 //Rotate an NxN matrix 90 degrees
-public class Question6 {
+public class Question1_6 {
 	// Hint: can be done in-place
 
 	public static void main(String[] args) {
