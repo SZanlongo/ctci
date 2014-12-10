@@ -23,7 +23,7 @@ public class CommonMethods {
 		// populate
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				randomMatrix[i][j] = Math.abs(rand.nextInt((max - min) + 1) + min);
+				randomMatrix[i][j] = randomIntInRange(min, max);
 			}
 		}
 
@@ -38,5 +38,28 @@ public class CommonMethods {
 			}
 			System.out.println();
 		}
+	}
+
+	// create a linked-list with random values
+	public static LinkedListNode randomLinkedList(int n, int min, int max) {
+		LinkedListNode root = new LinkedListNode(null, null, randomIntInRange(min, max));
+		LinkedListNode prev = root;
+		for (int i = 1; i < n; i++) {
+			int data = randomIntInRange(min, max);
+			LinkedListNode next = new LinkedListNode(null, null, data);
+			prev.setNext(next);
+			prev = next;
+		}
+		return root;
+	}
+
+	// return a random int
+	public static int randomInt(int n) {
+		return (int) (Math.random() * n);
+	}
+
+	// return a random int between min and max
+	public static int randomIntInRange(int min, int max) {
+		return randomInt(max + 1 - min) + min;
 	}
 }
