@@ -11,22 +11,18 @@ public class Question2_3 {
 		LinkedListNode head = CommonMethods.randomLinkedList(10, 0, 10);
 		System.out.println(head.printForward());
 		LinkedListNode delNode = head;
-		for (int i = 0; i < 4; i++) {// set nth node
-			delNode = delNode.next;
-		}
-		deleteNode(delNode); // delete node
-		System.out.println(head.printForward());
+		deleteNode(head.next.next); // delete node
+		System.out.println(delNode.printForward());
 	}
 
 	public static boolean deleteNode(LinkedListNode n) {
 		// check if last node in list
 		if (n == null || n.next == null) {
-			return false;
-		}
-		LinkedListNode nextNode = n.next;
-		n.prev = nextNode.prev;
-		n.next = nextNode.next;
-		n.data = nextNode.data;
+			return false; // Failure
+		} 
+		LinkedListNode next = n.next; 
+		n.data = next.data; 
+		n.next = next.next; 
 		return true;
 	}
 
