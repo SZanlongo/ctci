@@ -19,10 +19,10 @@ public class Question2_3 {
 		// check if last node in list
 		if (n == null || n.next == null) {
 			return false; // Failure
-		} 
-		LinkedListNode next = n.next; 
-		n.data = next.data; 
-		n.next = next.next; 
+		}
+		LinkedListNode next = n.next;
+		n.data = next.data;
+		n.next = next.next;
 		return true;
 	}
 
