@@ -1,7 +1,5 @@
 package commonLibrary;
 
-import java.util.Random;
-
 public class CommonMethods {
 	public static String charToString(char[] arr) {
 		// mutable sequence of chars
@@ -19,7 +17,6 @@ public class CommonMethods {
 	public static int[][] randomMatrix(int n, int min, int max) {
 		int[][] randomMatrix = new int[n][n]; // NxN matrix
 
-		Random rand = new Random();
 		// populate
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
