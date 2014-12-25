@@ -1,6 +1,8 @@
 package commonLibrary;
 
-public class TreeNode<T> {
+import java.util.Arrays;
+
+public class TreeNode {
 	public int data;
 	public TreeNode parent, left, right;
 	int height = 0; // Question 4 - 1
@@ -61,6 +63,25 @@ public class TreeNode<T> {
 	// from gayle ctci
 	public void print() {
 		BTreePrinter.printNode(this);
+	}
+
+	// own version of createMinimalBST
+	public static TreeNode createMinHeightBST(int[] arr) {
+		if (arr.length == 0) {
+			return null;
+		}
+
+		int mid = arr.length / 2;
+		TreeNode root = new TreeNode(arr[mid]);
+
+		// System.out.println("left\t" + Arrays.toString(Arrays.copyOfRange(arr,
+		// 0, mid)));
+		root.left = createMinHeightBST(Arrays.copyOfRange(arr, 0, mid));
+		// System.out.println("right\t"+Arrays.toString(Arrays.copyOfRange(arr,
+		// mid+1, arr.length)));
+		root.right = createMinHeightBST(Arrays.copyOfRange(arr, mid + 1, arr.length));
+
+		return root;
 	}
 
 }
