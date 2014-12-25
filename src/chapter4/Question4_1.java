@@ -1,23 +1,18 @@
 package chapter4;
 
+import commonLibrary.CommonMethods;
 import commonLibrary.TreeNode;
 
 //check if a binary tree is balanced
 public class Question4_1 {
-	public static final int TREE_SIZE = 10;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int arr[] = new int[TREE_SIZE];
-		for (int i = 0; i < TREE_SIZE; i++) {
-			arr[i] = i;
-		}
 
-		TreeNode root = TreeNode.createMinimalBST(arr);// from gayle ctci
+		TreeNode root = CommonMethods.createBST(10);
 		System.out.println("Is balanced? " + checkBalanced(root));
 		root.print();
 
-		root.insertInOrder(4); // Add 4 to make it unbalanced
+		// root.insertInOrder(4);// from gayle ctci
 		root.print();
 		System.out.println("Is balanced? " + checkBalanced(root));
 	}

@@ -59,4 +59,14 @@ public class CommonMethods {
 	public static int randomIntInRange(int min, int max) {
 		return randomInt(max + 1 - min) + min;
 	}
+
+	// create a min-height BST
+	public static TreeNode createBST(int size) {
+		int[] arr = new int[size];
+		for (int i = 0; i < size; i++) {
+			arr[i] = i + 1;
+		}
+
+		return TreeNode.createMinHeightBST(arr);
+	}
 }

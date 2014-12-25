@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class TreeNode {
 	public int data;
 	public TreeNode parent, left, right;
-	int height = 0; // Question 4 - 1
+	public int height = 0; // Question 4 - 1
+	public int state = 0;// 0 = unvisited, 1 = visited
 
 	public TreeNode(int data) {
 		this.data = data;
@@ -26,21 +27,21 @@ public class TreeNode {
 	}
 
 	// from gayle ctci
-	public static TreeNode createMinimalBST(int array[]) {
-		return createMinimalBST(array, 0, array.length - 1);
-	}
+	// public static TreeNode createMinimalBST(int array[]) {
+	// return createMinimalBST(array, 0, array.length - 1);
+	// }
 
 	// from gayle ctci
-	private static TreeNode createMinimalBST(int arr[], int start, int end) {
-		if (end < start) {
-			return null;
-		}
-		int mid = (start + end) / 2;
-		TreeNode n = new TreeNode(arr[mid]);
-		n.setLeft(createMinimalBST(arr, start, mid - 1));
-		n.setRight(createMinimalBST(arr, mid + 1, end));
-		return n;
-	}
+	// private static TreeNode createMinimalBST(int arr[], int start, int end) {
+	// if (end < start) {
+	// return null;
+	// }
+	// int mid = (start + end) / 2;
+	// TreeNode n = new TreeNode(arr[mid]);
+	// n.setLeft(createMinimalBST(arr, start, mid - 1));
+	// n.setRight(createMinimalBST(arr, mid + 1, end));
+	// return n;
+	// }
 
 	// from gayle ctci
 	public void insertInOrder(int d) {
