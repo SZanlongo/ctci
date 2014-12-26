@@ -75,12 +75,15 @@ public class TreeNode {
 		int mid = arr.length / 2;
 		TreeNode root = new TreeNode(arr[mid]);
 
-		// System.out.println("left\t" + Arrays.toString(Arrays.copyOfRange(arr,
-		// 0, mid)));
 		root.left = createMinHeightBST(Arrays.copyOfRange(arr, 0, mid));
-		// System.out.println("right\t"+Arrays.toString(Arrays.copyOfRange(arr,
-		// mid+1, arr.length)));
+		if (root.left != null) {
+			root.left.parent = root;
+		}
+		
 		root.right = createMinHeightBST(Arrays.copyOfRange(arr, mid + 1, arr.length));
+		if (root.right != null) {
+			root.right.parent = root;
+		}
 
 		return root;
 	}
