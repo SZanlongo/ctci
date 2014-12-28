@@ -1,5 +1,8 @@
 package commonLibrary;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class CommonMethods {
 	public static String charToString(char[] arr) {
 		// mutable sequence of chars
@@ -68,5 +71,37 @@ public class CommonMethods {
 		}
 
 		return TreeNode.createMinHeightBST(arr);
+	}
+
+	// create tree from array of values
+	public static TreeNode treeFromArr(int[] arr) {
+		if (arr.length <= 0) {
+			return null;
+		}
+		TreeNode root = new TreeNode(arr[0]);
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		queue.add(root);
+
+		boolean completed = false;
+		int i = 1;
+
+		while (!completed) {
+			TreeNode t = (TreeNode) queue.element();
+			if (t.left == null) {
+				t.left = new TreeNode(arr[i]);
+				i++;
+				queue.add(t.left);
+			} else if (t.right == null) {
+				t.right = new TreeNode(arr[i]);
+				i++;
+				queue.add(t.right);
+			} else {
+				queue.remove();
+			}
+			if (i == arr.length)
+				completed = true;
+		}
+		return root;
+
 	}
 }
