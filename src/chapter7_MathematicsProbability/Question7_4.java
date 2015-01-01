@@ -10,7 +10,7 @@ public class Question7_4 {
 		Random random = new Random();
 		int a = (random.nextInt(MAX + MAX) - MAX);
 		int b = (random.nextInt(MAX + MAX) - MAX);
-		
+
 		System.out.println("a\top\tb\tcheck\tresult");
 		System.out.println(a + "\t-\t" + b + "\t" + (a - b) + "\t" + subtract(a, b));
 		System.out.println(a + "\t*\t" + b + "\t" + (a * b) + "\t" + multiply(a, b));
@@ -44,8 +44,7 @@ public class Question7_4 {
 	public static int multiply(int a, int b) {
 		int result = 0;
 
-		// assuming we can use abs, else use flip
-		for (int i = Math.abs(a); i > 0; i--) {
+		for (int i = absVal(a); i > 0; i--) {
 			result += b;
 		}
 
@@ -63,8 +62,8 @@ public class Question7_4 {
 			throw new ArithmeticException("Divide by 0");
 		}
 
-		a = Math.abs(a);
-		b = Math.abs(b);
+		a = absVal(a);
+		b = absVal(b);
 		int result = 0;// number of times multiplied (solution)
 		int mult = 0;// current multiplication product
 
@@ -79,6 +78,18 @@ public class Question7_4 {
 		}
 
 		return result;
+	}
+
+	public static int absVal(int x) {
+		if (x < 0) {
+			int y = 0;
+			while (x != 0) {
+				y += 1;
+				x += 1;
+			}
+			return y;
+		}
+		return x;
 	}
 
 }
