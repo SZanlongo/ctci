@@ -24,6 +24,7 @@ public class Question4_5 {
 		if (root == null) {
 			return true;
 		}
+
 		// check against grandparent
 		if (root.data <= low || root.data > high) {
 			return false;

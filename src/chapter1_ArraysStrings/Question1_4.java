@@ -1,13 +1,14 @@
 package chapter1_ArraysStrings;
 
 import commonLibrary.CommonMethods;
+
 //Replace all spaces in string with %20
 public class Question1_4 {
+
 	/*
 	 * Assume string has space at end for extra chars Given true length of
 	 * string Java - use char array to perform in-place operation
 	 */
-
 	public static void main(String[] args) {
 		String str = "Hello world. ";
 		char[] arr = new char[str.length() + 3 * 2 + 1];
@@ -15,7 +16,7 @@ public class Question1_4 {
 			arr[i] = str.charAt(i);
 		}
 		replaceSpaces(arr, str.length());
-		//System.out.println(new String(arr));
+		// System.out.println(new String(arr));
 		System.out.println(CommonMethods.charToString(arr));
 	}
 

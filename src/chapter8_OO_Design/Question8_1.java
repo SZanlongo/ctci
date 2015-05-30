@@ -24,7 +24,7 @@ class Deck<T extends Card> {
 		this.deck = deck;
 	}
 
-	public T getCard() {
+	public Card getCard() {
 		if (getLeft() <= 0) {
 			return null;
 		}
@@ -34,14 +34,14 @@ class Deck<T extends Card> {
 	}
 
 	// handout cards
-	public T[] handout(int n) {
+	public Card[] handout(int n) {
 		if (n > getLeft()) {
 			return null;
 		}
 		// set of cards to give out
-		T[] give = (T[]) new Card[n];
+		Card[] give = (Card[]) new Card[n];
 		for (int i = 0; i < n; i++) {
-			T card = getCard();
+			Card card = getCard();
 			if (card != null) {
 				give[i] = card;
 			}
