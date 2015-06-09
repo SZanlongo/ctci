@@ -9,7 +9,6 @@ import java.awt.geom.Rectangle2D;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 //Given two 2D squares, find a line that would cut these squares in half
@@ -19,7 +18,7 @@ public class Question7_5 {
 	public static void main(String[] args) {
 		Square s1 = new Square(50, 50, 50);
 		Square s2 = new Square(250, 100, 100);
-		Line l = centerSquares(s1, s2);
+		 Line l = centerSquares(s1, s2);
 		draw(s1, s2, l);
 	}
 
@@ -56,6 +55,36 @@ public class Question7_5 {
 		frame.setVisible(true);
 	}
 
+	public static Point intersect(Point c1, Point c2, int radius) {
+		int xOrient = c1.x < c2.x ? -1 : 1;// x-orientation
+		int yOrient = c1.y < c2.y ? -1 : 1; // y-orientation
+
+		// check for same x-value, since this is a vertical line
+		if (c1.x == c2.x) {
+			return new Point(c1.x, c1.y + yOrient * radius);
+		}
+
+		// slope
+		double slope = (c1.y - c2.y) / (c1.x - c2.x);
+		// intersection point
+		double x = 0;// intersection x
+		double y = 0;// intersection y
+
+		if (Math.abs(slope) == 1) {
+			x = c1.x + xOrient * radius;
+			y = c1.y + yOrient * radius;
+		} else if (Math.abs(slope) < 1) {
+			// shallow
+			x = c1.x + xOrient * radius;
+			y = slope * (x - c1.x) + c1.y;
+		} else {
+			// steep
+			y = c1.y + yOrient * radius;
+			x = (y - c1.y) / slope + c1.x;
+		}
+
+		return new Point((int) x, (int) y);
+	}
 }
 
 class Point {
